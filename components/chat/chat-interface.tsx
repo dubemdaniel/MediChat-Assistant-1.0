@@ -80,12 +80,12 @@ export default function ChatInterface() {
     }
   };
 
-  const handleSuggestedQuestionClick = (question: string) => {
-    setInputValue(question);
-    // Pre-fill input
-    // Optionally, uncomment to auto-send
-    // handleSendMessage(question); 
-  };
+  // const handleSuggestedQuestionClick = (question: string) => {
+  //   setInputValue(question);
+  //   // Pre-fill input
+  //   // Optionally, uncomment to auto-send
+  //   // handleSendMessage(question); 
+  // };
 
   return (
     <div className="flex flex-col h-full bg-card rounded-lg shadow-xl overflow-hidden border ">

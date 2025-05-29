@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 
 interface ChatMessageBubbleProps {
   message: ChatMessage;
-  onSuggestedQuestionClick?: (question: string) => void;
+  // onSuggestedQuestionClick?: (question: string) => void;
 }
 
 export default function ChatMessageBubble({
@@ -122,6 +122,8 @@ export default function ChatMessageBubble({
       case "loading":
         return <p className="italic text-muted-foreground">Bot is typing...</p>;
       default:
+                const _exhaustiveCheck: never = message.content;
+
         return null;
     }
   };

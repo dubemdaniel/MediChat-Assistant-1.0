@@ -4,7 +4,7 @@ import type { AnalyzeSymptomsOutput } from '@/ai/flows/analyze-symptoms';
 export type MessageContent =
   | { type: 'text'; text: string }
   | { type: 'analysis'; analysis: AnalyzeSymptomsOutput }
-  | { type: 'suggested_questions'; questions: string[] }
+  // | { type: 'suggested_questions'; questions: string[] }
   | { type: 'loading' };
 
 export interface ChatMessage {
