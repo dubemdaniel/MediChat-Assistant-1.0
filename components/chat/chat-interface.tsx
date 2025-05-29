@@ -81,20 +81,23 @@ export default function ChatInterface() {
   };
 
   const handleSuggestedQuestionClick = (question: string) => {
-    setInputValue(question); // Pre-fill input
+    setInputValue(question);
+    // Pre-fill input
     // Optionally, uncomment to auto-send
     // handleSendMessage(question); 
   };
 
   return (
-    <div className="flex flex-col h-full bg-card rounded-lg shadow-xl overflow-hidden border">
+    <div className="flex flex-col h-full bg-card rounded-lg shadow-xl overflow-hidden border ">
       <div className="p-4 border-b flex items-center gap-2">
         <Bot className="text-primary h-6 w-6" />
         <h2 className="text-lg font-semibold">MediChat Conversation</h2>
       </div>
-      <ScrollArea className="flex-grow p-4 space-y-4" ref={scrollAreaRef}>
+      <div className="flex flex-col h-[calc(100vh-100px)] overflow-hidden w-full max-w-3xl mx-auto ">
+
+      <ScrollArea className="flex-grow p-4 space-y-4 " ref={scrollAreaRef}>
         {messages.map((msg) => (
-          <ChatMessageBubble key={msg.id} message={msg} onSuggestedQuestionClick={handleSuggestedQuestionClick}/>
+          <ChatMessageBubble key={msg.id} message={msg}/>
         ))}
         {isLoading && (
           <div className="flex items-center space-x-2 animate-pulse p-2">
@@ -106,6 +109,9 @@ export default function ChatInterface() {
           </div>
         )}
       </ScrollArea>
+      </div>
+
+
       <form onSubmit={handleSendMessage} className="p-4 border-t bg-background">
         <div className="flex items-center gap-2">
           <Input
