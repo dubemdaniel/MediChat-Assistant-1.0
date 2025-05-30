@@ -58,13 +58,13 @@ export default function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
                         key={condition}
                         className="p-3 border rounded-md bg-secondary/50"
                       >
-                        <div className="flex justify-between items-center">
+                        <div className="flex justify-between items-center gap-3">
                           <span className="font-semibold text-secondary-foreground">
                             {condition}
                           </span>
                           {confidenceLevels &&
                             confidenceLevels[index] !== undefined && (
-                              <Badge variant="outline" className="text-xs">
+                              <Badge variant="outline" className="text-xs text-center">
                                 Accuracy:{" "}
                                 {(confidenceLevels[index] * 100).toFixed(0)}%
                               </Badge>
@@ -138,7 +138,7 @@ export default function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
           "max-w-md md:max-w-lg lg:max-w-xl p-3 rounded-xl shadow-sm flex items-start gap-1 break-words overflow-wrap break-word ",
           isUser
             ? "bg-primary text-primary-foreground rounded-br-none"
-            : "bg-card text-card-foreground rounded-bl-none border   overflow-x-auto break-words  p-2"
+            : "bg-card text-card-foreground rounded-bl-none border   overflow-x-hidden break-words  p-2"
         )}
       >
         {isUser ? (
