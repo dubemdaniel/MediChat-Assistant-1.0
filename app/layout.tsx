@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'MediChat Assist',
-  description: 'An intelligent medical support chatbot expert system.',
+  title: 'MediChat Assistant',
+  description: 'A computerized medical support chatbot expert system.',
 };
 
 export default function RootLayout({
