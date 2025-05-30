@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { HeartPulse, MessageCircle } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { HeartPulse, MessageCircle, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -8,13 +11,17 @@ import {
   SheetTitle,
   SheetHeader,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/chat", label: "Chat" },
   ];
+
+  // Filter out the current page
+  const visibleNavItems = navItems.filter((item) => item.href !== pathname);
 
   return (
     <header className="bg-card shadow-sm sticky top-0 z-50">
@@ -29,8 +36,8 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
-          {navItems.map((item) => (
-            <Button key={item.label} variant="ghost" asChild>
+          {visibleNavItems.map((item) => (
+            <Button key={item.label} variant="ghost" className="text-xl font-semibold" asChild>
               <Link href={item.href}>{item.label}</Link>
             </Button>
           ))}
@@ -57,11 +64,11 @@ export default function Navbar() {
                   <HeartPulse className="h-7 w-7" />
                   <span className="text-lg font-semibold">MediChat Assist</span>
                 </Link>
-                {navItems.map((item) => (
+                {visibleNavItems.map((item) => (
                   <Button
                     key={item.label}
                     variant="ghost"
-                    className="w-full justify-start"
+                    className="w-full justify-start text-lg font-semibold"
                     asChild
                   >
                     <Link href={item.href}>{item.label}</Link>

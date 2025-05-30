@@ -93,11 +93,11 @@ export default function ChatInterface() {
         <Bot className="text-primary h-6 w-6" />
         <h2 className="text-lg font-semibold">MediChat Conversation</h2>
       </div>
-      <div className="flex flex-col h-[calc(100vh-100px)] overflow-hidden w-full max-w-3xl mx-auto ">
+      <div className="flex flex-col h-[calc(100vh-100px)] overflow-hidden w-full max-w-3xl mx-auto  ">
 
-      <ScrollArea className="flex-grow p-4 space-y-4 " ref={scrollAreaRef}>
+      <ScrollArea className="flex-grow p-1 md:p-4 space-y-4 " ref={scrollAreaRef}>
         {messages.map((msg) => (
-          <ChatMessageBubble key={msg.id} message={msg}/>
+          <ChatMessageBubble key={msg.id} message={msg} />
         ))}
         {isLoading && (
           <div className="flex items-center space-x-2 animate-pulse p-2">

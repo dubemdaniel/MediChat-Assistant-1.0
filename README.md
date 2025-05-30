@@ -1,5 +1,5 @@
-# Firebase Studio
+# MediChat Assist
 
-This is a NextJS starter in Firebase Studio.
+This is a medical support chatbot expert system
 
-To get started, take a look at app/page.tsx.
+To get started, run "npm run dev"

@@ -1,11 +1,7 @@
-// app/chat/actions.ts
 'use server';
 
 import { analyzeSymptoms, type AnalyzeSymptomsOutput } from '@/ai/flows/analyze-symptoms';
-// suggestNextQuestions is no longer used
-// import { suggestNextQuestions, type SuggestNextQuestionsOutput } from '@/ai/flows/suggest-next-questions';
-// summarizeConditionInfo might be used later if detailed info is sourced elsewhere
-// import { summarizeConditionInfo, type SummarizeConditionInfoOutput } from '@/ai/flows/summarize-condition-info';
+
 import type { MessageContent } from '@/lib/types';
 
 export async function getBotResponses(symptoms: string): Promise<MessageContent[]> {
@@ -16,7 +12,6 @@ export async function getBotResponses(symptoms: string): Promise<MessageContent[
     const analysisResult: AnalyzeSymptomsOutput = await analyzeSymptoms({ symptoms });
     botResponses.push({ type: 'analysis', analysis: analysisResult });
 
-    // 2. Suggest next questions logic has been removed
     if (!analysisResult.possibleConditions || analysisResult.possibleConditions.length === 0) {
        botResponses.push({ type: 'text', text: "I couldn't identify specific conditions based on the symptoms provided. Could you please provide more details or rephrase?" });
     }

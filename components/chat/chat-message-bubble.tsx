@@ -17,9 +17,7 @@ interface ChatMessageBubbleProps {
   // onSuggestedQuestionClick?: (question: string) => void;
 }
 
-export default function ChatMessageBubble({
-  message,
-}: ChatMessageBubbleProps) {
+export default function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
   const isUser = message.sender === "user";
   const [formattedTimestamp, setFormattedTimestamp] = useState<string | null>(
     null
@@ -42,8 +40,8 @@ export default function ChatMessageBubble({
         const { possibleConditions, confidenceLevels, reasoning } =
           message.content.analysis;
         return (
-          <Card className="shadow-md">
-            <CardHeader>
+          <Card className="shadow-md ">
+            <CardHeader className="">
               <CardTitle className="flex items-center gap-2 text-primary">
                 <Info size={20} /> Symptom Analysis
               </CardTitle>
@@ -122,7 +120,7 @@ export default function ChatMessageBubble({
       case "loading":
         return <p className="italic text-muted-foreground">Bot is typing...</p>;
       default:
-                const _exhaustiveCheck: never = message.content;
+        const _exhaustiveCheck: never = message.content;
 
         return null;
     }
@@ -137,10 +135,10 @@ export default function ChatMessageBubble({
     >
       <div
         className={cn(
-          "max-w-md md:max-w-lg lg:max-w-xl p-3 rounded-xl shadow-sm flex items-start gap-2.5 break-words overflow-wrap break-word",
+          "max-w-md md:max-w-lg lg:max-w-xl p-3 rounded-xl shadow-sm flex items-start gap-1 break-words overflow-wrap break-word ",
           isUser
             ? "bg-primary text-primary-foreground rounded-br-none"
-            : "bg-card text-card-foreground rounded-bl-none border   overflow-x-scroll break-words"
+            : "bg-card text-card-foreground rounded-bl-none border   overflow-x-auto break-words  p-2"
         )}
       >
         {isUser ? (
