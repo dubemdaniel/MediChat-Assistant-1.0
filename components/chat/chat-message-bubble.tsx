@@ -40,8 +40,8 @@ export default function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
         const { possibleConditions, confidenceLevels, reasoning } =
           message.content.analysis;
         return (
-          <Card className="shadow-md ">
-            <CardHeader className="">
+          <Card className="shadow-md">
+            <CardHeader className="-mx-4">
               <CardTitle className="flex items-center gap-2 text-primary">
                 <Info size={20} /> Symptom Analysis
               </CardTitle>
@@ -49,7 +49,7 @@ export default function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
                 Based on the symptoms you provided, here are some possibilities:
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-3 -mx-4">
               {possibleConditions && possibleConditions.length > 0 ? (
                 <>
                   <ul className="space-y-2">

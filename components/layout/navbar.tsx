@@ -67,7 +67,7 @@ export default function Navbar() {
                 {visibleNavItems.map((item) => (
                   <Button
                     key={item.label}
-                    variant="ghost"
+                    variant="default"
                     className="w-full justify-start text-lg font-semibold"
                     asChild
                   >

@@ -23,9 +23,9 @@ export default function HeroSection() {
         <div className="absolute w-2 h-2 bg-white/20 rounded-full animate-bounce" style={{left: '90%', top: '50%', animationDelay: '2.5s'}}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+      <div className="relative z-10 container mx-auto px-2 md:px-6 py-8 md:py-24">
         {/* Main content */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16  ">
           <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-8 text-blue-200">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">AI-Powered Health Assistant</span>
@@ -93,7 +93,7 @@ export default function HeroSection() {
         </div>
 
         {/* How it works section */}
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12 max-w-6xl mx-auto shadow-2xl">
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-3 md:p-12 max-w-6xl mx-auto shadow-2xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
             How It Works
           </h2>
