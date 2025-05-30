@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
           {visibleNavItems.map((item) => (
-            <Button key={item.label} variant="ghost" className="text-xl font-semibold" asChild>
+            <Button key={item.label} variant="default" className="text-xl font-semibold" asChild>
               <Link href={item.href}>{item.label}</Link>
             </Button>
           ))}
