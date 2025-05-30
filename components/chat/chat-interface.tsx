@@ -95,7 +95,7 @@ export default function ChatInterface() {
       </div>
       <div className="flex flex-col h-[calc(100vh-100px)] overflow-hidden w-full max-w-3xl mx-auto                                                                                                                   ">
 
-      <ScrollArea className="flex-grow p-2 md:p-4 space-y-4 " ref={scrollAreaRef}>
+      <ScrollArea className="flex-grow p-2 pr-3 md:pr-0 md:p-4 space-y-4 " ref={scrollAreaRef}>
         {messages.map((msg) => (
           <ChatMessageBubble key={msg.id} message={msg} />
         ))}
