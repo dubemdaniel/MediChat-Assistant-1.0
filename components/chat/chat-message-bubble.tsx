@@ -64,7 +64,7 @@ export default function ChatMessageBubble({
   const renderContent = () => {
     switch (message.content.type) {
       case "text":
-        return <p className="whitespace-pre-wrap">{message.content.text}</p>;
+        return <p className="whitespace-pre-wrap  text-sm">{message.content.text}</p>;
 
       case "doctor_consultation":
         const { consultation } = message.content;

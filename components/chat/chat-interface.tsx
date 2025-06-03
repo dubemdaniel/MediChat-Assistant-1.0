@@ -21,6 +21,7 @@ export default function ChatInterface() {
       content: { 
         type: 'text', 
         text: "👋 Hello, I'm Dr. MediChat, your AI medical assistant. I'm here to help you understand your symptoms and provide medical guidance.\n\nPlease tell me:\n• What symptoms are you experiencing?\n• How long have you had these symptoms?\n• How would you rate your pain (if any) from 1-10?\n\nRemember, I'm here to provide information and guidance, but this doesn't replace professional medical care." 
+        
       },
       timestamp: new Date(),
     }
